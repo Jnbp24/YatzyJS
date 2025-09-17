@@ -135,7 +135,7 @@ body {
 	transition: background 0.2s;
 }
 .roll-button:hover {
-	background: #388e3c;
+	background: #8824d3;
 }
 
 .turn-counter {
@@ -145,7 +145,7 @@ body {
 
 /* Bottom box for options */
 .bottom-box {
-	background: #fff;
+	background: #7f7db3;
 	border-radius: 8px;
 	padding: 20px;
 	box-shadow: 0 2px 8px rgba(0,0,0,0.04);
@@ -199,7 +199,7 @@ body {
 .roll-button {
 	padding: 10px 20px;
 	font-size: 1rem;
-	background: #4caf50;
+	background: #8f1a1a;
 	color: white;
 	border: none;
 	border-radius: 5px;
@@ -207,7 +207,7 @@ body {
 	transition: background 0.2s;
 }
 .roll-button:hover {
-	background: #388e3c;
+	background: #9a5622;
 }
 
 /* Turn counter styling */

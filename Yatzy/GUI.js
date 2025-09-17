@@ -14,13 +14,14 @@ diceRow.className = 'dice-row';
 topBox.append(diceRow);
 
 const diceImgs = [];
+
 for (let i = 0; i < 5; i++) {
     const img = document.createElement('img');
     img.src = `assets/dice${i+1}.png`;
     img.alt = `Dice ${i+1}`;
     img.className = 'dice-img';
+    img.id = `die${i+1}`
     diceImgs.push(img);
-    diceRow.append(img);
 }
 
 // Controls row (turn counter and roll button)
@@ -47,4 +48,5 @@ rollButton.addEventListener('click', () => {
     turnCounterValue++;
     if (turnCounterValue > 3) turnCounterValue = 1;
     turnCounter.textContent = turnCounterValue;
+    rollDice();
 });

@@ -1,21 +1,22 @@
-class Dice {
-    constructor() {
-        this.value = 0;
-        this.held = false;
-    }
 
-    roll() {
-        if (!this.held) {
-            this.value = Math.floor(Math.random() * 6) + 1;
-        }
-    }
 
-    toggleHold() {
-        this.held = !this.held;
-    }
+function rollDice(){
 
-    reset() {
-        this.value = 0;
-        this.held = false;
-    }
+let numbers = [];
+
+for(let i = 0; i<5; i++){
+    let tempNumber = Math.floor(Math.random() * 6) + 1;
+    numbers.push(tempNumber);
+}
+
+diceRow.innerHTML = '';
+
+numbers.forEach((number, i) => {
+        diceImgs[i].src = `assets/dice${number}.png`;
+        diceRow.appendChild(diceImgs[i]);
+    });
+};
+
+function holdDie(){
+    
 }

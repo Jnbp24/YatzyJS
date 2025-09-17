@@ -1,4 +1,4 @@
-// Bottom box for Yatzy options and scoring
+
 const bottomBox = document.createElement('div');
 bottomBox.className = 'bottom-box';
 mainContainer.append(bottomBox);
@@ -25,7 +25,7 @@ const optionsForm = document.createElement('form');
 optionsForm.className = 'options-form';
 bottomBox.append(optionsForm);
 
-// Top section (upper part) for 1-s to 6-s
+
 for (let i = 0; i < 6; i++) {
     const row = document.createElement('div');
     row.className = 'option-row';
@@ -60,7 +60,7 @@ bonusInput.className = 'option-input';
 sumBonusForm.append(bonusInput);
 optionsForm.append(sumBonusForm);
 
-// Lower section for rest of options
+
 for (let i = 6; i < yatzyOptions.length; i++) {
     const row = document.createElement('div');
     row.className = 'option-row';
@@ -76,7 +76,7 @@ for (let i = 6; i < yatzyOptions.length; i++) {
     optionsForm.append(row);
 }
 
-// Total row
+
 const totalRow = document.createElement('div');
 totalRow.className = 'option-row total-row';
 const totalLabel = document.createElement('label');

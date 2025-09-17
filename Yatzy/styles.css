@@ -1,0 +1,236 @@
+body {
+	background: #fafad2;
+}
+.main-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+	padding: 30px 0;
+}
+.top-box, .bottom-box {
+	background: #f7f7c0;
+	border: 2px solid #e2e2a2;
+	border-radius: 6px;
+	padding: 20px 30px 30px 30px;
+	min-width: 500px;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+}
+.dice-row {
+	display: flex;
+	gap: 18px;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+.dice-img {
+	width: 60px;
+	height: 60px;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+	background: #fff;
+	border-radius: 8px;
+}
+.controls-row {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+	justify-content: flex-start;
+}
+.roll-button {
+	padding: 10px 30px;
+	font-size: 1.1rem;
+	background: #eaeaea;
+	color: #333;
+	border: 1px solid #aaa;
+	border-radius: 4px;
+	cursor: pointer;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+	transition: background 0.2s;
+}
+.roll-button:hover {
+	background: #d6d6d6;
+}
+.turn-counter {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-left: 4px;
+}
+.options-form {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+.option-row {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 2px;
+}
+.option-row label {
+	min-width: 120px;
+	text-align: left;
+	font-size: 1rem;
+	color: #444;
+}
+.option-input {
+	width: 40px;
+	padding: 2px 4px;
+	font-size: 1rem;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	background: #fff;
+	margin-right: 8px;
+}
+.sum-bonus-row label,
+.total-row label {
+	min-width: 50px;
+}
+/* Main vertical container */
+.main-container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	gap: 20px;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+/* Top box for dice, button, turn counter */
+.top-box {
+	background: #f0f4f8;
+	border-radius: 8px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.dice-container {
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+}
+
+.dice-img {
+	width: 50px;
+	height: 50px;
+}
+
+.controls-container {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+
+.roll-button {
+	padding: 10px 20px;
+	font-size: 1rem;
+	background: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+.roll-button:hover {
+	background: #388e3c;
+}
+
+.turn-counter {
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+/* Bottom box for options */
+.bottom-box {
+	background: #fff;
+	border-radius: 8px;
+	padding: 20px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.options-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.yatzy-option {
+	border: 1px solid #ccc;
+	padding: 10px;
+	background: #f9f9f9;
+	text-align: left;
+	font-size: 1rem;
+	border-radius: 4px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+	margin-bottom: 8px;
+}
+/* Main grid layout */
+.main-grid {
+	display: grid;
+	grid-template-rows: auto 1fr;
+	height: 100vh;
+	gap: 20px;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+/* Top section layout */
+.top-section {
+	display: grid;
+	grid-template-columns: repeat(8, auto);
+	align-items: center;
+	gap: 10px;
+}
+
+/* Dice images */
+.dice-img {
+	width: 50px;
+	height: 50px;
+}
+
+/* Roll button styling */
+.roll-button {
+	padding: 10px 20px;
+	font-size: 1rem;
+	background: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+.roll-button:hover {
+	background: #388e3c;
+}
+
+/* Turn counter styling */
+.turn-counter {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+/* Bottom section layout */
+.bottom-section {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+}
+
+/* Yatzy option styling */
+.yatzy-option {
+	border: 1px solid #ccc;
+	padding: 10px;
+	background: #f9f9f9;
+	text-align: center;
+	font-size: 1rem;
+	border-radius: 4px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}

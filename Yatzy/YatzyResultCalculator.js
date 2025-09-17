@@ -1,5 +1,3 @@
-import { Dice } from "./dice.js"
-
 class YatzyResultCalculator {
     constructor(diceArray) {
         this.dice = diceArray;
@@ -22,7 +20,7 @@ class YatzyResultCalculator {
                 score += eyes;
             }
         }
-        return eyes;
+        return score;
     }
 
     onePairScore() {
@@ -31,11 +29,11 @@ class YatzyResultCalculator {
             if (counts[i] >= 2) {
                 return i * 2;
             }
-            return 0;
         }
+        return 0;
     }
 
-    pairValuePairScore() {
+    twoPairScore() {
         const counts = this.getCounts()
         let pairs = 0, score = 0;
         for (let i = 6; i >= 1; i--) {
@@ -47,8 +45,8 @@ class YatzyResultCalculator {
                     return score;
                 }
             }
-            return 0;
         }
+        return 0;
     }
 
     threeValueOfAKindScore() {
@@ -57,8 +55,8 @@ class YatzyResultCalculator {
             if (counts[i] >= 3) {
                 return i * 3;
             }
-            return 0;
         }
+        return 0;
     }
 
     fourOfAKindScore() {
@@ -67,8 +65,8 @@ class YatzyResultCalculator {
             if (counts[i] >= 4) {
                 return i * 4
             }
-            return 0;
         }
+        return 0;
     }
 
     fullHouseScore() {

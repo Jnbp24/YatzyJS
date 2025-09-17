@@ -1,0 +1,20 @@
+@import url("dicestyles.css");
+@import url("optionstyles.css");
+@import url("topbox.css");
+@import url("bottombox.css");
+
+body {
+    background: #2d7f8e;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontal centering */
+    gap: 20px;           /* Space between top and bottom boxes */
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}

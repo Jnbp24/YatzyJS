@@ -1,0 +1,13 @@
+.bottom-box {
+    border: 2px solid #000;
+    border-radius: 8px;
+    padding: 20px 30px;
+    min-width: 500px;
+    min-height: 150px; /* ensures visibility */
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

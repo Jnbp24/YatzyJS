@@ -1,26 +1,30 @@
 .options-form {
-	display: flex;
-	flex-direction: column;
-	gap: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
 }
+
 .option-row {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 2px;
 }
+
 .option-row label {
-	min-width: 120px;
-	text-align: left;
-	font-size: 1rem;
-	color: #444;
+    min-width: 120px;
+    text-align: left;
+    font-size: 1rem;
+    color: #444;
 }
+
 .option-input {
-	width: 40px;
-	padding: 2px 4px;
-	font-size: 1rem;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	background: #fff;
-	margin-right: 8px;
+    width: 40px;
+    padding: 2px 4px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #fff;
+    margin-right: 8px;
 }

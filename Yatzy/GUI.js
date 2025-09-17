@@ -13,6 +13,9 @@ const diceRow = document.createElement('div');
 diceRow.className = 'dice-row';
 topBox.append(diceRow);
 
+
+
+
 const diceImgs = [];
 for (let i = 0; i < 5; i++) {
     const img = document.createElement('img');

@@ -36,7 +36,7 @@ let turnCounterValue = 1;
 const turnCounter = document.createElement('span');
 turnCounter.textContent = turnCounterValue;
 turnCounter.className = 'turn-counter';
-controlsRow.append(turnCounter);
+turnCounterLabel.append(turnCounter);
 
 const rollButton = document.createElement('button');
 rollButton.textContent = 'Roll!';

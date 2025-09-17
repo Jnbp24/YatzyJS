@@ -1,4 +1,3 @@
-/* Top box container */
 .top-box {
     border: 2px solid #000000;
     border-radius: 8px;
@@ -14,26 +13,13 @@
     align-items: center; 
 }
 
-/* Dice row */
-.dice-row {
+.controls-row {
     display: flex;
+    flex-direction: column; /* Stack button + counter vertically */
+    align-items: center;
     gap: 10px;
 }
 
-/* Controls row: turn counter left, roll button centered */
-.controls-row {
-    width: 100%;
-    gap: 50px;
-    display: flex;
-    justify-content: center; /* Centers roll button */
-    align-items: center;
-    position: relative; /* Needed if using absolute elements (optional here) */
-}
-
-/* Container for left-aligned turn counter */
-
-
-/* Roll button styling */
 .roll-button {
     padding: 10px 20px;
     font-size: 1rem;
@@ -47,4 +33,12 @@
 
 .roll-button:hover {
     background: #387a8e;
+}
+
+.turn-counter-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
 }

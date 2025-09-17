@@ -1,4 +1,3 @@
-
 const bottomBox = document.createElement('div');
 bottomBox.className = 'bottom-box';
 mainContainer.append(bottomBox);

@@ -1,4 +1,3 @@
-// Create main vertical container
 const mainContainer = document.createElement('div');
 mainContainer.className = 'main-container';
 document.body.append(mainContainer);

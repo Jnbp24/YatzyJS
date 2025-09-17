@@ -12,10 +12,11 @@ mainContainer.append(topBox);
 const diceRow = document.createElement('div');
 diceRow.className = 'dice-row';
 topBox.append(diceRow);
+
 const diceImgs = [];
 for (let i = 0; i < 5; i++) {
     const img = document.createElement('img');
-    img.src = 'dice-face-1.png';
+    img.src = `assets/dice${i+1}.png`;
     img.alt = `Dice ${i+1}`;
     img.className = 'dice-img';
     diceImgs.push(img);

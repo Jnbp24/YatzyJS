@@ -39,7 +39,7 @@ const turnCounterLabel = document.createElement('span');
 turnCounterLabel.textContent = 'Turn ';
 controlsRow.append(turnCounterLabel);
 
-let turnCounterValue = 1;
+let turnCounterValue = 0;
 const turnCounter = document.createElement('span');
 turnCounter.textContent = turnCounterValue;
 turnCounter.className = 'turn-counter';
@@ -55,8 +55,8 @@ rollButton.addEventListener('click', () => {
     // If we're at turn 3, Dice.js will reset to 1, so don't increment
     if (currentTurn === 3) {
         rollDice();
-        turnCounterValue = 1;
-        turnCounter.textContent = 1;
+        turnCounterValue = 0;
+        turnCounter.textContent = 0;
     } else {
         rollDice();
         turnCounterValue = currentTurn + 1;

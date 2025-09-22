@@ -1,16 +1,23 @@
-const mainContainer = document.createElement('div');
-mainContainer.className = 'main-container';
-document.body.append(mainContainer);
+window.mainContainer = document.querySelector('.main-container');
+if (!window.mainContainer) {
+    window.mainContainer = document.createElement('div');
+    window.mainContainer.className = 'main-container';
+    document.body.append(window.mainContainer);
+}
 
-// Top box for dice, turn counter, roll button
-const topBox = document.createElement('div');
-topBox.className = 'top-box';
-mainContainer.append(topBox);
+let topBox = document.querySelector('.top-box');
+if (!topBox) {
+    topBox = document.createElement('div');
+    topBox.className = 'top-box';
+    window.mainContainer.insertBefore(topBox, window.mainContainer.firstChild);
+}
 
-// Dice images row
-const diceRow = document.createElement('div');
-diceRow.className = 'dice-row';
-topBox.append(diceRow);
+window.diceRow = document.querySelector('.dice-row');
+if (!window.diceRow) {
+    window.diceRow = document.createElement('div');
+    window.diceRow.className = 'dice-row';
+    topBox.append(window.diceRow);
+}
 
 const diceImgs = [];
 

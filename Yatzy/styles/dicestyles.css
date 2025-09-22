@@ -12,3 +12,8 @@
     background: #fff;
     border-radius: 8px;
 }
+
+.dice-hold{
+    border-color:10px red;
+    border-style: solid;
+}

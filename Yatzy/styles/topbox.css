@@ -1,7 +1,7 @@
 .top-box {
-    border: 2px solid #000000;
+    border: 2px solid #000;
     border-radius: 8px;
-    padding: 20px 30px 30px 30px;
+    padding: 20px 30px 30px;
     min-width: 500px;
     box-sizing: border-box;
     margin-bottom: 20px;
@@ -9,13 +9,20 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     align-items: center; 
+}
+
+.top-box:hover {
+    box-shadow: 
+    0 4px 12px rgba(0, 255, 204, 0.3), 
+    0 0 10px rgba(0, 255, 204, 0.4);
+    transition: box-shadow 0.3s ease;
 }
 
 .controls-row {
     display: flex;
-    flex-direction: column; /* Stack button + counter vertically */
+    flex-direction: column;
     align-items: center;
     gap: 10px;
 }
@@ -28,11 +35,12 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.2s;
 }
 
 .roll-button:hover {
     background: #387a8e;
+    transform: scale(1.05);
 }
 
 .turn-counter-container {
@@ -41,4 +49,5 @@
     gap: 5px;
     font-weight: bold;
     font-size: 1.2rem;
+    color: #fff;
 }

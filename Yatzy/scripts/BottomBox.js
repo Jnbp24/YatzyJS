@@ -1,6 +1,16 @@
-const bottomBox = document.createElement('div');
-bottomBox.className = 'bottom-box';
-mainContainer.append(bottomBox);
+window.mainContainer = document.querySelector('.main-container');
+if (!window.mainContainer) {
+    window.mainContainer = document.createElement('div');
+    window.mainContainer.className = 'main-container';
+    document.body.append(window.mainContainer);
+}
+
+let bottomBox = document.querySelector('.bottom-box');
+if (!bottomBox) {
+    bottomBox = document.createElement('div');
+    bottomBox.className = 'bottom-box';
+    if (window.mainContainer) window.mainContainer.append(bottomBox);
+}
 
 const yatzyOptions = [
     { label: '1', id: 'ones' },

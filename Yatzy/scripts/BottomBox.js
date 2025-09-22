@@ -46,6 +46,16 @@ for (let i = 0; i < 6; i++) {
     input.type = 'text';
     input.id = yatzyOptions[i].id;
     input.className = 'option-input';
+    input.addEventListener('click', function () {
+        input.classList.add('input-lock');
+        input.readOnly = true;
+        input.style.pointerEvents = 'none';
+        input.style.setProperty('background-color', '#a3c9f7', 'important'); // soft blue
+        if (window.resetDice) window.resetDice();
+        // Re-enable roll button
+        const rollButton = document.querySelector('.roll-button');
+        if (rollButton) rollButton.disabled = false;
+    });
     row.append(input);
     optionsForm.append(row);
 }
@@ -59,6 +69,8 @@ sumBonusForm.append(sumLabel);
 const sumInput = document.createElement('input');
 sumInput.type = 'text';
 sumInput.className = 'option-input';
+sumInput.readOnly = true;
+sumInput.style.pointerEvents = 'none';
 sumBonusForm.append(sumInput);
 const bonusLabel = document.createElement('label');
 bonusLabel.textContent = 'Bonus:';
@@ -66,6 +78,8 @@ sumBonusForm.append(bonusLabel);
 const bonusInput = document.createElement('input');
 bonusInput.type = 'text';
 bonusInput.className = 'option-input';
+bonusInput.readOnly = true;
+bonusInput.style.pointerEvents = 'none';
 sumBonusForm.append(bonusInput);
 optionsForm.append(sumBonusForm);
 
@@ -81,10 +95,21 @@ for (let i = 6; i < yatzyOptions.length; i++) {
     input.type = 'text';
     input.id = yatzyOptions[i].id;
     input.className = 'option-input';
+    input.addEventListener('click', function () {
+        input.classList.add('input-lock');
+        input.readOnly = true;
+        input.style.pointerEvents = 'none';
+        input.style.setProperty('background-color', '#a3c9f7', 'important'); // soft blue
+        if (window.resetDice) window.resetDice();
+        // Re-enable roll button
+        const rollButton = document.querySelector('.roll-button');
+        if (rollButton) rollButton.disabled = false;
+        rollButton.style.opacity = '1';
+        rollButton.style.cursor = 'pointer';
+    });
     row.append(input);
     optionsForm.append(row);
 }
-
 
 const totalRow = document.createElement('div');
 totalRow.className = 'option-row total-row';
@@ -94,5 +119,22 @@ totalRow.append(totalLabel);
 const totalInput = document.createElement('input');
 totalInput.type = 'text';
 totalInput.className = 'option-input';
+totalInput.readOnly = true;
+totalInput.style.pointerEvents = 'none';
 totalRow.append(totalInput);
 optionsForm.append(totalRow);
+
+function resetOptionInputs() {
+    const allInputs = document.querySelectorAll('.option-input');
+    allInputs.forEach(input => {
+        // Only reset if not locked
+        if (!input.classList.contains('input-lock')) {
+            input.value = '';
+            input.style.backgroundColor = '';
+            input.style.pointerEvents = '';
+            input.readOnly = false;
+        }
+        // If locked, do nothing (keep value and lock)
+    });
+}
+window.resetOptionInputs = resetOptionInputs;

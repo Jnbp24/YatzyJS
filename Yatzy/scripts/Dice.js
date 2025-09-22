@@ -1,4 +1,3 @@
-
 let diceRow;
 
 function createDiceImages() {
@@ -25,7 +24,17 @@ function rollDice() {
     if (!diceRow) return;
     let turnCounter = document.querySelector('.turn-counter');
     let turnCounterValue = parseInt(turnCounter.textContent);
-    if (turnCounterValue < 3) {
+    const rollButton = document.querySelector('.roll-button');
+    if (turnCounterValue === 0) {
+        createDiceImages();
+        turnCounter.textContent = '1';
+        updateScores(getDiceArray());
+        if (rollButton) {
+            rollButton.disabled = false;
+            rollButton.style.opacity = '1';
+            rollButton.style.cursor = 'pointer';
+        }
+    } else if (turnCounterValue < 3) {
         const currentImgs = Array.from(diceRow.children);
         diceRow.innerHTML = '';
         for (let i = 0; i < 5; i++) {
@@ -47,15 +56,23 @@ function rollDice() {
             diceRow.appendChild(img);
         }
         updateScores(getDiceArray());
-        // Do NOT increment turnCounter here; TopBox.js handles it
+        turnCounter.textContent = (turnCounterValue + 1).toString();
+        if (parseInt(turnCounter.textContent) === 3 && rollButton) {
+            rollButton.disabled = true;
+            rollButton.style.opacity = '0.5';
+            rollButton.style.cursor = 'not-allowed';
+        }
     } else {
-        createDiceImages();
-        turnCounter.textContent = 1;
+        resetDice();
     }
 }
 
 function resetDice() {
-    createDiceImages();
+    diceRow = document.querySelector('.dice-row');
+    if (diceRow) diceRow.innerHTML = '';
+    let turnCounter = document.querySelector('.turn-counter');
+    if (turnCounter) turnCounter.textContent = '0';
+    if (window.resetOptionInputs) window.resetOptionInputs();
 }
 
 function updateScores(diceArray){
@@ -82,7 +99,7 @@ function updateScores(diceArray){
     // Populate inputs directly by calling the functions in the map
     for (const [id, fn] of Object.entries(scoreMap)) {
         const input = document.getElementById(id);
-        if (input) input.value = fn() || '';
+        if (input && !input.classList.contains('input-lock')) input.value = fn() || '';
     }
 
     // Sum & bonus
@@ -99,6 +116,22 @@ function updateScores(diceArray){
     const total = Object.values(scoreMap).reduce((acc, fn) => acc + fn(), 0);
     const totalInput = document.querySelector('.total-row input');
     if (totalInput) totalInput.value = total;
+}
+
+function resetUnlockedInputs() {
+    
+    const allInputs = document.querySelectorAll('.option-input');
+    
+    allInputs.forEach(input => {
+       
+        const computedStyle = window.getComputedStyle(input);
+        const backgroundColor = computedStyle.backgroundColor;
+        
+        
+        if (backgroundColor !== 'rgb(0, 128, 0)' && backgroundColor !== 'green') {
+            input.value = '';
+        }
+    });
 }
 
 function getDiceArray() {

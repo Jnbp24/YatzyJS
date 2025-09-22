@@ -19,6 +19,16 @@ function createDiceImages() {
     }
 }
 
+function rollDiceAnimation() {
+    const diceElements = document.querySelectorAll('.dice-img:not(.dice-hold)');
+    diceElements.forEach(die => {
+        die.classList.add('roll-animation');
+        setTimeout(() => {
+            die.classList.remove('roll-animation');
+        }, 400);
+    });
+}
+
 function rollDice() {
     diceRow = document.querySelector('.dice-row');
     if (!diceRow) return;
@@ -55,6 +65,8 @@ function rollDice() {
             }
             diceRow.appendChild(img);
         }
+
+        rollDiceAnimation();
         updateScores(getDiceArray());
         turnCounter.textContent = (turnCounterValue + 1).toString();
         if (parseInt(turnCounter.textContent) === 3 && rollButton) {

@@ -4,16 +4,17 @@
 @import url("bottombox.css");
 
 body {
-    background: #2d7f8e;
+    background: linear-gradient(135deg, #2d7f8e, #1c3b4d);
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Segoe UI', sans-serif;
+    color: #000;
 }
 
 .main-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Horizontal centering */
-    gap: 20px;           /* Space between top and bottom boxes */
+    align-items: center;
+    gap: 20px;
     padding: 20px;
     box-sizing: border-box;
     width: 100%;

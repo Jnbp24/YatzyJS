@@ -28,3 +28,16 @@
     background: #fff;
     margin-right: 8px;
 }
+
+.option-input:hover {
+    cursor: pointer;
+    background-color: #d4f7d4; /* light green */
+    border-color: #4caf50;     /* optional: change border to green */
+    transition: background-color 0.3s, border-color 0.3s; /* smooth effect */
+}
+
+.option-input:focus{
+    background-color: green;
+    border-color: black;
+    transition: background-color 0.3s, border-color 0.3s;
+}

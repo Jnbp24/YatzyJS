@@ -51,8 +51,15 @@ rollButton.className = 'roll-button';
 controlsRow.append(rollButton);
 
 rollButton.addEventListener('click', () => {
-    turnCounterValue++;
-    if (turnCounterValue > 3) turnCounterValue = 1;
-    turnCounter.textContent = turnCounterValue;
-    rollDice();
+    let currentTurn = parseInt(turnCounter.textContent);
+    // If we're at turn 3, Dice.js will reset to 1, so don't increment
+    if (currentTurn === 3) {
+        rollDice();
+        turnCounterValue = 1;
+        turnCounter.textContent = 1;
+    } else {
+        rollDice();
+        turnCounterValue = currentTurn + 1;
+        turnCounter.textContent = turnCounterValue;
+    }
 });

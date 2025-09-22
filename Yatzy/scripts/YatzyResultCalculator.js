@@ -3,7 +3,7 @@ class YatzyResultCalculator {
         this.dice = diceArray;
     }
 
-    getCounts() {
+   getCounts() {
         const counts = [0, 0, 0, 0, 0, 0, 0];
         for (const die of this.dice) {
             if (die.value >= 1 && die.value <= 6) {
